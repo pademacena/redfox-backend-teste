@@ -24,7 +24,7 @@ class App {
     this.express.use(cors());
     this.express.use(routes);
     this.express.use(errorHandling);
-    // this.express.use(bodyParser.json());
+    this.express.use(bodyParser.json());
   }
 
 }
