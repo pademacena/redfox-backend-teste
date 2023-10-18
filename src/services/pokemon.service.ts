@@ -3,12 +3,13 @@ import { IPokemon } from '../@Types/pokemon.type';
 import pokemonSchema from '../schemas/pokemon.schema';
 
 export class PokemonService extends BaseService {
+  protected readonly limitPage: number = Number(process.env.LIMIT_PAGE) ?? 5;
 
   public async listPokemon(page: number = 1) {
     this.logger.info(`PokemonService :: listPokemon :: start service`);
 
     try{
-      const result = await pokemonSchema.paginate({}, {page, limit: 5, sort: {row: 1}});
+      const result = await pokemonSchema.paginate({}, {page, limit: this.limitPage, sort: {row: 1}});
       this.logger.info(`PokemonService :: listPokemon :: result consult ${JSON.stringify(result)}`);
       return result;
     } catch(err) {
@@ -22,7 +23,7 @@ export class PokemonService extends BaseService {
     this.logger.info(`PokemonService :: genericFind :: start service`);
 
     try{
-      const result = await pokemonSchema.paginate({$text: {$search: search}}, {page, limit: 5, sort: {row: 1}});
+      const result = await pokemonSchema.paginate({$text: {$search: search}}, {page, limit: this.limitPage, sort: {row: 1}});
       this.logger.info(`PokemonService :: genericFind :: result consult ${JSON.stringify(result)}`);
       return result;
     } catch(err) {
