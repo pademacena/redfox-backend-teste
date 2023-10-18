@@ -1,5 +1,4 @@
 import { BaseService } from './base.service';
-import { IPokemon } from '../@Types/pokemon.type';
 import pokemonSchema from '../schemas/pokemon.schema';
 
 export class PokemonService extends BaseService {
