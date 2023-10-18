@@ -51,7 +51,7 @@ export class ImportPokemonService extends BaseService {
 
       return {message: 'Import Complete'}
     } catch(err) {
-      this.logger.error(`ImportPokemonService :: create :: error for import ${err}`);
+      this.logger.error(`ImportPokemonService :: create :: error for import ${JSON.stringify(err)}`);
     }
   }
 

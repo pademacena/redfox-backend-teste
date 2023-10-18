@@ -1,4 +1,5 @@
 import { Schema, model, Document } from 'mongoose';
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 interface PokemonInterface extends Document {
   row: number;
@@ -153,5 +154,9 @@ const PokemonSchema = new Schema({
       required: true
     },
 });
+
+PokemonSchema.index({ name: 'text', type1: 'text', type2: 'text', weather1: 'text', weather2: 'text'});
+
+PokemonSchema.plugin(mongoosePaginate);
 
 export default model<PokemonInterface>('Pokemon', PokemonSchema);

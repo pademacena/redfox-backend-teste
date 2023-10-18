@@ -2,10 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import { MongodbConnect } from './database';
 import bodyParser from 'body-parser';
+import * as dotenv from 'dotenv';
 import 'reflect-metadata';
 import 'express-async-errors';
 import {routes} from './routes';
 import { errorHandling } from './middleware/error.middleware';
+dotenv.config();
 
 class App {
   public express: express.Application;

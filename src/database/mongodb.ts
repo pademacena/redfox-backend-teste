@@ -6,7 +6,7 @@ export class MongodbConnect {
     mongoose.set("strictQuery", true);
 
     mongoose.connect(
-      '<mongoconection>'
+      `${process.env.MONGO_HOST}`
     );
   }
 }
