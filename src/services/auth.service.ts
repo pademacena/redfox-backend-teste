@@ -12,6 +12,7 @@ export class AuthService extends BaseService {
       { user },
       `${process.env.HASH_TOKEN}`,
       {
+        subject: user,
         expiresIn: '1d'
       }
     );
