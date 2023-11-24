@@ -34,3 +34,26 @@ Após terminar o desafio, você pode solicitar um pull request para a branch mas
 Só! Mas se quiser fazer a diferença, tente implementar um pouco de TDD e utilizar docker para execução do projeto.
 
 Boa sorte! :)
+
+## Implementação e Anotaçòes
+
+Bem, comecei o desenvolvimento pela funcionalidade que eu considero a mais importante, upload de arquivo. eu ja tinha trabalhado com csv, porem foi a primeira vez que trabalhei direto com o xlsx, achei bem tranquilo e consegui realizar o upoload de forma tranquila.
+
+Como banco de dados, eu preferi utilizar um MongoDB, acho que para os tipos de dados e consultas que vamos realizar é a melhor opção. 
+
+### Funcionalidades Implementadas
+
+  - [x] Import do arquivo xlsx
+  - [x] Validar se a linha já foi inserida, se nao foi eu faço o inset no banco
+  - [x] Listar Pokemons
+  - [x] Paginação Listagens e Consultas
+  - [x] Error MiddleWare
+  - [x] Setar Variaveis de Ambiente para o .env
+  - [x] Consulta Genérica feita pelos campos de texto
+  - [ ] MiddleWare para validação de Inserção
+  - [ ] Docker File
+  - [ ] docker-compose.yml
+  - [ ] Testes Import xlsx
+  - [ ] Teste Listar pokemon
+  - [ ] Teste Consulta Genérica
+  - [ ] Testes no MiddleWare
